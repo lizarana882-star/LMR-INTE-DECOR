@@ -1,1 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMR | Modern Interior Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --primary: #2c3e50;
+            --accent: #d4af37; /* Gold accent */
+            --light: #f9f9f9;
+            --dark: #1a1a1a;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            color: var(--primary);
+        }
+
+        .logo span { color: var(--accent); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li { margin-left: 30px; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .btn:hover { background: #b8962d; }
+
+        /* Pricing & Services Section */
+        .section-padding { padding: 80px 8%; }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--light);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-content { padding: 30px; text-align: center; }
+
+        .card-content h3 { margin-bottom: 15px; font-size: 1.5rem; }
+
+        .price {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .features li { margin-bottom: 8px; }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 8% 20px;
+            text-align: center;
+        }
+
+        .footer-content { margin-bottom: 30px; }
+        .copyright { font-size: 0.8rem; opacity: 0.6; border-top: 1px solid #333; padding-top: 20px; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for code brevity */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">LMR<span>DESIGN</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Transform Your Space</h1>
+        <p>Luxury Interior Design tailored to your lifestyle. We bring elegance and functionality to every corner.</p>
+        <a href="#pricing" class="btn">View Packages</a>
+    </section>
+
+    <section class="section-padding" id="pricing">
+        <h2 class="section-title">Design Packages</h2>
+        
+        <div class="pricing-container">
+            <!-- Package 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800" alt="Consultation" class="card-img">
+                <div class="card-content">
+                    <h3>Consultation</h3>
+                    <div class="price">$199</div>
+                    <ul class="features">
+                        <li>2-Hour Site Visit</li>
+                        <li>Color Palette Selection</li>
+                        <li>Furniture Layout Sketch</li>
+                        <li>Mood Board Creation</li>
+                    </ul>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1616489953149-8839955bed53?auto=format&fit=crop&q=80&w=800" alt="Full Room" class="card-img">
+                <div class="card-content">
+                    <h3>Full Room Design</h3>
+                    <div class="price">$899</div>
+                    <ul class="features">
+                        <li>3D Visualization</li>
+                        <li>Furniture Sourcing</li>
+                        <li>Lighting Design</li>
+                        <li>2 Revision Rounds</li>
+                    </ul>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800" alt="Luxury Home" class="card-img">
+                <div class="card-content">
+                    <h3>Luxury Suite</h3>
+                    <div class="price">$2,499</div>
+                    <ul class="features">
+                        <li>Entire Floor Plan</li>
+                        <li>Custom Cabinetry Design</li>
+                        <li>Project Management</li>
+                        <li>VIP Decor Sourcing</li>
+                    </ul>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h2 class="logo" style="color: white;">LMR<span>DESIGN</span></h2>
+            <p>123 Design Avenue, Suite 400<br>Contact: hello@lmrdesign.com</p>
+        </div>
+        <div class="copyright">
+            &copy; 2026 LMR Interior Designing. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
