@@ -1,261 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LMR Interior Design | Luxury Spaces</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold: #c5a059;
-            --dark: #121212;
-            --gray: #f4f4f4;
-            --white: #ffffff;
-            --text: #333333;
-        }
+<meta charset="UTF-8">
+<title>Elite Interior Design Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YWHSGQFSLY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text);
-            line-height: 1.7;
-            background-color: var(--white);
-            scroll-behavior: smooth;
-        }
+  gtag('config', 'G-YWHSGQFSLY');
+</script>
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#f5f5f5;
+}
 
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+header{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+}
 
-        /* Navigation */
-        nav {
-            padding: 25px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            z-index: 1000;
-            border-bottom: 1px solid #eee;
-        }
+nav{
+background:#222;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+}
 
-        .logo { font-size: 2rem; font-weight: 700; letter-spacing: 3px; color: var(--dark); }
-        .logo span { color: var(--gold); }
+nav a{
+color:white;
+padding:12px 16px;
+text-decoration:none;
+}
 
-        .nav-links { list-style: none; display: flex; }
-        .nav-links li { margin-left: 35px; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.9rem; font-weight: 600; transition: 0.3s; text-transform: uppercase; }
-        .nav-links a:hover { color: var(--gold); }
+nav a:hover{background:#444;}
 
-        /* Hero Section */
-        header {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), 
-                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1600');
-            background-size: cover;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
+.hero{
+height:420px;
+background:url('https://images.unsplash.com/photo-1501183638710-841dd1904471') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:42px;
+color:white;
+font-weight:bold;
+text-shadow:2px 2px 10px black;
+}
 
-        .hero-content h1 { font-size: 5rem; margin-bottom: 1rem; line-height: 1.1; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; letter-spacing: 2px; }
+.section{
+padding:50px 20px;
+text-align:center;
+}
 
-        /* About / Intro Section */
-        .intro { padding: 100px 15%; text-align: center; background: var(--gray); }
-        .intro h2 { font-size: 3rem; margin-bottom: 20px; color: var(--dark); }
-        .intro p { font-size: 1.1rem; color: #666; max-width: 800px; margin: 0 auto; }
+h2{margin-bottom:25px;}
 
-        /* Portfolio Gallery */
-        .portfolio { padding: 80px 8%; }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 40px;
-        }
-        .gallery-item {
-            height: 400px;
-            overflow: hidden;
-            position: relative;
-        }
-        .gallery-item img {
-            width: 100%; height: 100%; object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.4); opacity: 0; transition: 0.3s;
-            display: flex; align-items: center; justify-content: center; color: white;
-        }
-        .gallery-item:hover .overlay { opacity: 1; }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
 
-        /* How It Works (Process) */
-        .process { padding: 80px 8%; background: var(--dark); color: white; text-align: center; }
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-top: 50px;
-        }
-        .step h3 { font-size: 1.8rem; color: var(--gold); margin-bottom: 15px; }
-        .step-num { font-size: 3rem; opacity: 0.2; font-weight: 700; }
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
 
-        /* Pricing Section */
-        .pricing { padding: 100px 8%; background: var(--gray); text-align: center; }
-        .price-cards { display: flex; justify-content: center; gap: 30px; margin-top: 50px; flex-wrap: wrap; }
-        .card { 
-            background: white; padding: 40px; width: 350px; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.05); 
-            border-top: 5px solid var(--gold);
-        }
-        .card h3 { font-size: 2rem; margin-bottom: 10px; }
-        .price-tag { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; font-weight: bold; }
-        .card ul { list-style: none; margin-bottom: 30px; }
-        .card li { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+.card:hover{transform:scale(1.03);}
 
-        .btn {
-            background: var(--dark); color: white; padding: 12px 30px;
-            text-decoration: none; display: inline-block; transition: 0.3s;
-            border: 1px solid var(--dark);
-        }
-        .btn:hover { background: transparent; color: var(--dark); }
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
 
-        /* Team Section */
-        .team { padding: 80px 8%; text-align: center; }
-        .team-grid { display: flex; justify-content: center; gap: 50px; margin-top: 40px; }
-        .member img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; }
+.card h3{margin:10px 0;}
+.price{color:green;font-weight:bold;margin-bottom:10px;}
 
-        /* Footer */
-        footer { padding: 60px 8%; background: #0a0a0a; color: white; text-align: center; }
-        .footer-logo { font-size: 2rem; margin-bottom: 20px; font-family: 'Cormorant Garamond', serif; }
-    </style>
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+</style>
+
 </head>
+
 <body>
 
-    <nav>
-        <div class="logo">LMR<span>.</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#team">Team</a></li>
-        </ul>
-    </nav>
+<header>
+<h1>Elite Interior Design Studio</h1>
+</header>
 
-    <header id="home">
-        <div class="hero-content">
-            <p>ESTABLISHED 2026</p>
-            <h1>Design That Inspires</h1>
-            <a href="#portfolio" class="btn" style="background: var(--gold); border-color: var(--gold);">Explore Work</a>
-        </div>
-    </header>
+<nav>
+<a href="#house">House</a>
+<a href="#office">Office</a>
+<a href="#hotel">Hotel</a>
+<a href="#kitchen">Kitchen</a>
+<a href="#bath">Bathroom</a>
+<a href="#restaurant">Restaurant</a>
+<a href="#garden">Garden</a>
+</nav>
 
-    <section class="intro">
-        <h2>Refining Modern Living</h2>
-        <p>At LMR, we believe your home should be a reflection of your journey. We blend architectural precision with soulful aesthetics to create spaces that aren't just seen, but felt.</p>
-    </section>
+<div class="hero">
+Luxury Interior Designs
+</div>
 
-    <section class="portfolio" id="portfolio">
-        <h2 style="text-align: center; font-size: 3rem; margin-bottom: 40px;">Our Signature Projects</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=600" alt="Living Room">
-                <div class="overlay"><h4>Minimalist Loft</h4></div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=600" alt="Kitchen">
-                <div class="overlay"><h4>The Modern Kitchen</h4></div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80&w=600" alt="Bedroom">
-                <div class="overlay"><h4>Serene Suites</h4></div>
-            </div>
-        </div>
-    </section>
+<!-- HOUSE -->
+<div class="section" id="house">
+<h2>House Interiors</h2>
+<div class="grid">
 
-    <section class="process" id="process">
-        <h2 style="font-size: 3rem;">How We Create</h2>
-        <div class="process-grid">
-            <div class="step">
-                <div class="step-num">01</div>
-                <h3>Concept</h3>
-                <p>Initial sketches and mood boarding based on your vision.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">02</div>
-                <h3>Blueprint</h3>
-                <p>Detailed 3D modeling and structural planning.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">03</div>
-                <h3>Curation</h3>
-                <p>Selecting the finest fabrics, furniture, and finishes.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">04</div>
-                <h3>Execution</h3>
-                <p>Final transformation and on-site styling.</p>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6">
+<h3>Luxury Living Room</h3>
+<div class="price">$5000</div>
+</div>
 
-    <section class="pricing" id="pricing">
-        <h2 style="font-size: 3rem;">Service Packages</h2>
-        <div class="price-cards">
-            <div class="card">
-                <h3>Vibe Check</h3>
-                <div class="price-tag">$250</div>
-                <ul>
-                    <li>1 Room Consultation</li>
-                    <li>Digital Moodboard</li>
-                    <li>Shopping List</li>
-                    <li>2-Week Support</li>
-                </ul>
-                <a href="#" class="btn">Select Plan</a>
-            </div>
-            <div class="card">
-                <h3>The Full Suite</h3>
-                <div class="price-tag">$1,200</div>
-                <ul>
-                    <li>3D Renderings</li>
-                    <li>Full Furniture Layout</li>
-                    <li>Lighting Plan</li>
-                    <li>Contractor Management</li>
-                </ul>
-                <a href="#" class="btn">Select Plan</a>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505693314120-0d443867891c">
+<h3>Modern Bedroom</h3>
+<div class="price">$3200</div>
+</div>
 
-    <section class="team" id="team">
-        <h2>The Creative Minds</h2>
-        <div class="team-grid">
-            <div class="member">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Designer">
-                <h3> Liza Revekka.</h3>
-                <p>Lead Architect</p>
-            </div>
-            <div class="member">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" alt="Designer">
-                <h3>Niru R .</h3>
-                <p>Furniture Specialist</p>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
+<h3>Elegant Hall</h3>
+<div class="price">$4500</div>
+</div>
 
-    <footer>
-        <div class="footer-logo">LMR<span>.</span> INTERIORS</div>
-        <p>&copy; 2026 LMR Design Group. All Rights Reserved.</p>
-        <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.5;">Project for Academic Presentation Only</p>
-    </footer>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2f0a">
+<h3>Minimal Living</h3>
+<div class="price">$4000</div>
+</div>
+
+</div>
+</div>
+
+<!-- OFFICE -->
+<div class="section" id="office">
+<h2>Office Interiors</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+<h3>Startup Office</h3>
+<div class="price">$6000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36">
+<h3>Corporate Office</h3>
+<div class="price">$8000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1497366216548-37526070297c">
+<h3>Meeting Room</h3>
+<div class="price">$7000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1553877522-43269d4ea984">
+<h3>Creative Workspace</h3>
+<div class="price">$6500</div>
+</div>
+
+</div>
+</div>
+
+<!-- HOTEL -->
+<div class="section" id="hotel">
+<h2>Hotel Interiors</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c">
+<h3>Luxury Lobby</h3>
+<div class="price">$15000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb2102a">
+<h3>Hotel Room</h3>
+<div class="price">$9000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551887373-6c1e1c8c6a2a">
+<h3>Suite Room</h3>
+<div class="price">$12000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+<h3>Reception Area</h3>
+<div class="price">$10000</div>
+</div>
+
+</div>
+</div>
+
+<!-- KITCHEN -->
+<div class="section" id="kitchen">
+<h2>Kitchen Designs</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f">
+<h3>Modern Kitchen</h3>
+<div class="price">$4500</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d">
+<h3>Luxury Kitchen</h3>
+<div class="price">$6000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0">
+<h3>Open Kitchen</h3>
+<div class="price">$5200</div>
+</div>
+
+</div>
+</div>
+
+<!-- BATHROOM -->
+<div class="section" id="bath">
+<h2>Bathroom Designs</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1502005229762-9c7f3a6f7a1a">
+<h3>Luxury Bathroom</h3>
+<div class="price">$3000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14">
+<h3>Modern Bath</h3>
+<div class="price">$2800</div>
+</div>
+
+</div>
+</div>
+
+<!-- RESTAURANT -->
+<div class="section" id="restaurant">
+<h2>Restaurant Interiors</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0">
+<h3>Fine Dining</h3>
+<div class="price">$9000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5">
+<h3>Modern Cafe</h3>
+<div class="price">$6000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+<h3>Luxury Restaurant</h3>
+<div class="price">$11000</div>
+</div>
+
+</div>
+</div>
+
+<!-- GARDEN -->
+<div class="section" id="garden">
+<h2>Garden Designs</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735">
+<h3>Modern Garden</h3>
+<div class="price">$4000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+<h3>Luxury Outdoor</h3>
+<div class="price">$5500</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef">
+<h3>Green Backyard</h3>
+<div class="price">$3800</div>
+</div>
+
+</div>
+</div>
+
+<footer>
+<p>© 2026 Elite Interior Design Studio</p>
+</footer>
 
 </body>
 </html>
